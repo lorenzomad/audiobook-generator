@@ -1,0 +1,4 @@
+pypdf
+gTTS 
+pyttsx3 
+playsound
