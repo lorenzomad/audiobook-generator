@@ -11,6 +11,7 @@ print(text)
 
 audio_generator = AudioGenerator()
 
-audio_generator.generate_audio(text)
+audio_generator.google_generate_audio(text)
 audio_generator.save_audio(AUDIOPATH)
-# audio_generator.delete_file(AUDIOPATH)
+# audio_generator.play_audio(AUDIOPATH)
+audio_generator.delete_file(AUDIOPATH)
