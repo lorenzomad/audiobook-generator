@@ -11,3 +11,8 @@ Types of input:
 Modules:
 - text extraction
 - audio generation
+
+
+TODO:
+ - make the bark system function properly 
+ - implement the system into a webapp to make it usable 
