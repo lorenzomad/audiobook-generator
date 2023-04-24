@@ -1,5 +1,6 @@
 import gtts
 from playsound import playsound
+import os
 
 
 class AudioGenerator:
@@ -19,3 +20,7 @@ class AudioGenerator:
     def play_audio(self, play_path):
         #plays the audio file saved at play_path
         playsound(play_path)
+
+    def delete_file(self, delete_path):
+        #deletes the file save at delete_path
+        os.remove(delete_path)
