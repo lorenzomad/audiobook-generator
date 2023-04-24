@@ -2,10 +2,10 @@ from text_extractor import TextExtractor
 from audio_generator import AudioGenerator
 
 AUDIOPATH = "../audio/sample.mp3"
-
+EXAMPLE_PDF = "../sample_file/sample.pdf"
 text_extractor = TextExtractor()
 
-text = text_extractor.read_text("../sample_file/sample.pdf")
+text = text_extractor.read_text(EXAMPLE_PDF)
 
 print(text)
 
