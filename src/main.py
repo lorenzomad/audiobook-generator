@@ -7,8 +7,6 @@ text_extractor = TextExtractor()
 
 text = text_extractor.read_text(EXAMPLE_PDF)
 
-print(text)
-
 audio_generator = AudioGenerator()
 
 audio_generator.google_generate_audio(text)
