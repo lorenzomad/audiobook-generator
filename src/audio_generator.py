@@ -13,37 +13,22 @@ class AudioGenerator:
         self.bark_audio = None
         self.google_audio = None
 
-    def google_generate_audio(self, text):
+    def google_generate_audio(self, text, save_path):
         #creates an audio from the input text using google tts
         self.google_audio = gtts.gTTS(text)
+        self.google_audio.save(save_path)
         self.tts_type = "google"
 
-    def bark_generate_audio(self, text):
+    def bark_generate_audio(self, text, save_path):
         #creates the audio from tetx using bark model
         preload_models()
         self.bark_audio = generate_audio(text)
+        write_wav(save_path, SAMPLE_RATE, self.bark_audio)
         self.tts_type = "bark"
-
-    def save_audio(self, save_path):
-        #save the file to the path
-        match self.tts_type:
-            case "google":
-                self.google_audio.save(save_path)
-            case "bark":
-                write_wav(save_path, SAMPLE_RATE, self.bark_audio)
-            case _:
-                print("First generate the audio using the generative functions")
 
     def play_audio(self, play_path):
         #plays the audio file saved at play_path
-        match self.tts_type:
-            case "google":
-                playsound(play_path)
-            case "bark":
-                Audio(self.bark_audio, rate=SAMPLE_RATE)
-            case _:
-                print("First generate the audio using the generative functions")
-
+        playsound(play_path)
 
     def delete_file(self, delete_path):
         #deletes the file save at delete_path

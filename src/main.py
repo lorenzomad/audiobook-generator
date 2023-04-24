@@ -9,7 +9,6 @@ text = text_extractor.read_text(EXAMPLE_PDF)
 
 audio_generator = AudioGenerator()
 
-audio_generator.google_generate_audio(text)
-audio_generator.save_audio(AUDIOPATH)
+audio_generator.google_generate_audio(text, AUDIOPATH)
 # audio_generator.play_audio(AUDIOPATH)
 audio_generator.delete_file(AUDIOPATH)
